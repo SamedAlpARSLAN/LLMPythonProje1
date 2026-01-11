@@ -1,0 +1,10 @@
+{
+    "messages":  [
+                     {
+                         "content":  "Merhaba, April!",
+                         "role":  "user"
+                     }
+                 ],
+    "model":  "APRIL_CAUSAL_LM",
+    "max_tokens":  16
+}

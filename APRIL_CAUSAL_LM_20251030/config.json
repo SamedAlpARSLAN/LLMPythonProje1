@@ -1,0 +1,14 @@
+{
+  "model_type": "april",
+  "auto_map": {
+    "AutoConfig": "configuration_april.AprilConfig",
+    "AutoModelForCausalLM": "modeling_april.AprilForCausalLM",
+    "AutoTokenizer": "tokenization_april.AprilTokenizerHF"
+  },
+  "vocab_size": 4123,
+  "embedding_dim": 256,
+  "num_heads": 4,
+  "num_layers": 4,
+  "context_length": 128,
+  "device": "cpu"
+}

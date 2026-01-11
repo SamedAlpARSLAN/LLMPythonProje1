@@ -1,0 +1,18 @@
+# Minimal CPU CLI imajı (scripts/run_inference.py çalıştırmak için)
+FROM python:3.12-slim
+
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential ca-certificates && rm -rf /var/lib/apt/lists/*
+
+RUN python -m pip install --upgrade pip && pip install numpy==1.26.4
+# CPU torch
+RUN pip install --index-url https://download.pytorch.org/whl/cpu torch==2.2.2
+
+# Projenin tamamını kopyala (scripts klasörü lazım)
+COPY . /app
+
+# Varsa ek gereksinimler
+RUN if [ -f "/app/APRIL_CAUSAL_LM_20251030/scripts/requirements.txt" ]; then \
+      pip install -r /app/APRIL_CAUSAL_LM_20251030/scripts/requirements.txt ; \
+    fi
